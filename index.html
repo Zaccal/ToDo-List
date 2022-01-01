@@ -3,22 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="main.css">
-	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<title>ToDo-List</title>
 </head>
 <body>
-	<div class="simple-todo">
-		<div class="tasks-wrapper">
-			<h2>Список задач</h2>
-			<ul id="todo-list">
-			
+
+	<div class="container">
+		<div class="toDo">
+			<div class="todo-header">
+				<div class="todo-btns">
+					<button class="todo-btn" id="toDo-plus" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
+					<button class="todo-btn" id="todo-btn_min">Очистить</button>
+				</div>
+				<h1>ToDo</h1>
+			</div>
+			<ul class="todo-list">
 			</ul>
 		</div>
-		<form id="todo-form">
-			<input required id="todo-input" type="text" placeholder="Введите название задачи" />
-			<button class="btn" type="submit">Добавить задачу</button>
-		</form>
 	</div>
-	<script src="app.js"></script>
+
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Введите название задачи</h5>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        <form action="#" class="todo-form">
+	        	<textarea required="" id="todo-input" rows="2"></textarea>
+	        	<input type="submit" value="Записать" id="todo-write" class="btn btn-primary">
+	        </form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>

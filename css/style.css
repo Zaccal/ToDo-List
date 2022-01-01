@@ -1,0 +1,143 @@
+*, *:before, *:after{
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #333;
+	font-size: 16px;
+	font-family: sans-serif;
+	color: #fff;
+}
+
+.container{
+	max-width: 1210px;
+	padding: 0 10px;
+	margin: 0 auto;
+}
+
+.toDo {
+	margin: 100px auto;
+	max-width: 400px;
+}
+
+.todo-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 70px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px; 
+	background-color: #A0E7E5; 
+}
+
+.todo-btn{
+	margin-left: 15px;
+	width: 40px;
+	height: 40px;
+	background-color: #eff;
+	border-radius: 50%;
+	border: 0;
+	font-size: 20px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.todo-btn:hover{
+	background-color: #fff;
+	color: #333;
+}
+
+.todo-header h1{
+	margin-right: 15px;
+}
+
+.todo-list{
+	margin-top: 0;
+	height: 500px;
+	background-color: #fff;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding-top: 15px;
+	padding-left: 0;
+	overflow-y: scroll; 
+}
+
+.todo-list li {
+	color: #333;
+	list-style: none;
+	font-size: 23px;
+	padding: 15px;
+	border-bottom: 1px solid #e0e0e0;
+	margin-left: 0;
+	padding-left: 55px;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	-ms-line-clamp: 20000;
+	-webkit-line-clamp: 20000;
+	line-clamp: 20000;
+	display: -webkit-box;
+	display: box;
+	word-wrap: break-word;
+	-webkit-box-orient: vertical;
+	box-orient: vertical;
+}
+
+
+.todo-list li:before{
+	content: "";
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 10px;
+	border: 1px solid #333;
+	left: 0;
+	margin-left: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #333;
+}
+
+.todo-list li.active:before{
+	content: "✔";
+	background-color: #51E3A4;
+}
+
+.todo-list li.active{
+	text-decoration: line-through 2px;
+	color: #6c757d;
+}
+
+#todo-input{
+	width: 100%;
+	border-radius: 5px;
+	border: 1px solid #333;
+	resize: none;
+}
+
+.modal-title{
+	color: #333;
+}
+
+#todo-write {
+	display: block;
+	margin: 10px auto;
+}
+
+#todo-btn_min {
+	width: auto;
+	border-radius: 5px;
+	font-size: 15px;
+	padding: 0 10px;
+}
+
+pre{
+	margin-bottom: 0;
+}
