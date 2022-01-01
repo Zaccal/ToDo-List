@@ -75,18 +75,6 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-
-	-ms-text-overflow: ellipsis;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	-ms-line-clamp: 20000;
-	-webkit-line-clamp: 20000;
-	line-clamp: 20000;
-	display: -webkit-box;
-	display: box;
-	word-wrap: break-word;
-	-webkit-box-orient: vertical;
-	box-orient: vertical;
 }
 
 
@@ -140,4 +128,9 @@ body{
 
 pre{
 	margin-bottom: 0;
+	white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap; 
+    white-space: -o-pre-wrap; 
+    white-space: pre-wrap;
+    word-wrap: break-word; 
 }
