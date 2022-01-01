@@ -133,4 +133,6 @@ pre{
     white-space: -o-pre-wrap; 
     white-space: pre-wrap;
     word-wrap: break-word; 
+    line-height: 23px;
+	overflow: hidden;
 }
