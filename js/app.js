@@ -32,45 +32,6 @@ function addTray(e) {
 		setTimeout(() => {trake.remove()}, 1000)
 	})
 
-	const btnFont = document.querySelector('#toDo-fon')
-	const btnMin = document.querySelector('#todo-font')
-	let fontNumber = '20'
-	trake.style['font-size'] = `${fontNumber}px`
-	let fontHei = '21'
-	trakeP.style['line-height'] = `${fontHei}px`
-	btnFont.addEventListener('click', addFont)
-	btnMin.addEventListener('click', removerFont)
-
-	function addFont() {
-		fontNumber = Number(fontNumber) + 1
-		trake.style['font-size'] = `${fontNumber}px`
-		fontHei = Number(fontHei) + 1
-		trakeP.style['line-height'] = `${fontHei}px`
-		if (fontNumber === 28) {
-			fontNumber = 20
-			trake.style['font-size'] = `${fontNumber}px`
-		}
-		if (fontHei === 29) {
-			fontHei = 21
-			trakeP.style['line-height'] = `${fontHei}px`
-		}
-	}
-
-	function removerFont() {
-		fontNumber = Number(fontNumber) - 1
-		trake.style['font-size'] = `${fontNumber}px`
-		fontHei = Number(fontHei) - 1
-		trakeP.style['line-height'] = `${fontHei}px`
-		if (fontNumber === 15) {
-			fontNumber = 20
-			trake.style['font-size'] = `${fontNumber}px`
-		}
-		if (fontHei === 16) {
-			fontHei = 21
-			trakeP.style['line-height'] = `${fontHei}px`
-		}
-	}
-
 	tInput.value = ''
 	tInput.focus()
 }
