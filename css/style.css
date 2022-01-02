@@ -136,3 +136,16 @@ pre{
     line-height: 23px;
 	overflow: hidden;
 }
+
+#toDo-fon{
+	font-size: 15px;
+}
+
+#todo-font{
+	font-size: 15px;
+}
+
+.todo-btns{
+	display: flex;
+	align-items: center;
+}
