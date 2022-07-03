@@ -1,0 +1,247 @@
+/* null start */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+button, li { cursor: pointer; }
+
+button { border: 0; }
+
+li { list-style: none; }
+
+a { text-decoration: none; }
+
+ul, ol{
+    padding: 0;
+    margin: 0;
+}
+
+/* null end */
+
+
+/* model */
+
+.error { display: none; }
+
+/* model */
+
+/* ToDo main start */
+
+.todo {
+    position: relative;
+    z-index: 1;
+    margin: 100px auto;
+    max-width: 500px;
+    height: 693px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.25);
+    background: url('./img/bg.jpg');
+}
+
+/* ToDo main end */
+
+/* header todo start */
+
+.header{
+    width: 100%;
+    background: #00D5E2;
+    box-shadow: 0px 4px 2px #00929B;
+    border-radius: 5px 5px 0px 0px;
+    max-height: 85px;
+    z-index: 2;
+}
+
+.todo__container{
+    padding-right: 30px;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.todo__container > img {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    transform: rotate(90deg);
+    top: 51px;
+    right: -227px;
+}
+
+.container{
+    max-width: 485px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__title{
+    font-family: 'Inter', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #fff;
+}
+
+/* btn header */
+
+.header__opttion{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__btn{
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.header__btn + .header__btn {
+    margin-left: 15px;
+}
+
+.header__btn:nth-child(2) {
+    margin-right: -4px;
+}
+
+.header__btn img {
+    width: 100%;
+    height: 100%;
+}
+
+/* header todo end */
+
+/* content tasks start */
+
+.tasks{
+    padding-top: 10px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tasks li {
+    width: 100%;
+    border-bottom: 0.5px solid gray;
+}
+
+.tasks li + li {
+    margin-top: 10px;
+}
+
+.tasks__task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    white-space: pre-line;
+}
+
+.tasks__task p{
+    font-family: 'Averia Sans Libre', cursive;
+    color: gray;
+    font-size: 23px;
+    margin-bottom: 0;
+    overflow-x: hidden;
+    width: 395px;
+}
+
+.tasks__task button {
+    position: relative;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+}
+
+
+.tasks__task button img {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+}
+
+/* content tasks end */
+
+/* Add Fn */
+
+#inputAdd, #change-input{
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 100px;
+}
+
+/* .redactor{
+    background-color: #212529ba;
+} */
+
+.btn{
+    background-color: #00d5e2;
+    color: #fff;
+}
+
+.modal-setting {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 1060;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}
+
+.inputSetting{
+    margin-top: 7px;
+}
+
+#sizeFont{
+    max-width: 70px;
+}
+
+.error-setting{
+    display: none;
+}
+
+.modal-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@media screen and (max-width: 759px) {
+    .todo__container{
+        padding: 0 10px;
+        padding-right: 10;
+    }
+    .todo__container > img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 457px) {
+    .modal-flex{
+        flex-direction: column  ;
+    }
+}
+
+.modal-sure {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+}

@@ -1,50 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-	<title>ToDo-List</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- fonts start -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&family=Inter:wght@600&display=swap"
+    rel="stylesheet">
+  <!-- fonts end -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="normalize.min.css">
+  <title>ToDo V3.0</title>
 </head>
+
 <body>
 
-	<div class="container">
-		<div class="toDo">
-			<div class="todo-header">
-				<div class="todo-btns">
-					<button class="todo-btn" id="toDo-plus" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
-					<button class="todo-btn" id="todo-btn_min">Очистить</button>
-				</div>
-				<h1>ToDo</h1>
-			</div>
-			<ul class="todo-list">
-			</ul>
-		</div>
-	</div>
+  <!-- Модальное окно подверженнее -->
 
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Введите название задачи</h5>
-	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	      </div>
-	      <div class="modal-body">
-	        <form action="#" class="todo-form">
-	        	<textarea required="" id="todo-input" rows="7"></textarea>
-	        	<input type="submit" value="Записать" id="todo-write" class="btn btn-primary">
-	        </form>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+  <div class="modal-sure" tabindex="-1" id="sure">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Сохранить изменения ?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Выберите пункт из предложенных</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btnWindow" id="unSureSave" data-bs-dismiss="modal">Не сохранять</button>
+          <button type="button" class="btn btnWindow" id="sureSave">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>  
 
-	
-	<script src="js/bootstrap.bundle.min.js"></script>
-	<script src="js/app.js"></script>
+  <!-- Окно ошыпки натройки срабатывает если размер шрифта больше 25 в настройках -->
+
+  <div class="error-setting alert alert-warning alert-dismissible fade show animate__animated animate__fadeInDown" role="alert">
+    Размер шрифта больше 25 не можеть быть 
+    <button type="button" class="btn-close"></button>
+  </div>
+
+  <!-- Модальное окно, окно настройки-->
+  <div class="modal-setting animate__animated animate__fadeInDown" tabindex="-1" id="settingWindow">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Настройки</h5>
+        </div>
+        <div class="modal-body">
+          <div class="modal-flex">
+            <div class="modal-flex__left">
+              <label for="headerText">Текст на шапке ToDo</label> <br>
+              <input type="text" name="headerText" class="inputSetting" id="inputHeaderText"> <br> <br>
+
+              <label for="font">Шрифт</label> <br>
+              <select type="text" name="font" class="inputSetting" id="selectFont">
+                <option value="default">Default</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Courier New">Courier New</option>
+              </select> <br> <br>
+
+              <label for="sizeFont">Размер шрифта</label> <br>
+              <input type="number" name="sizeFont" class="inputSetting" id="sizeFont" placeholder="25">
+              
+            </div>
+            <div class="modal-flex__right">
+              <label for="headerColor">Цвет шапки</label> <br>
+              <input type="color" id="headerColorInput" class="inputSetting" name="headerColor" value="#00D5E2"> <br> <br>
+              
+              <label for="headerShadow">Цвет тени в шапке</label> <br>
+              <input type="color" id="headerShadowInput" class="inputSetting" name="headerShadow" value="#00929B"> <br> <br>
+           
+              <label for="textColor">Цветь текста</label> <br>
+              <input type="color" id="textColorInput" class="inputSetting" name="textColor" value="#808080">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btnWindow" data-bs-dismiss="modal" id="closeSettingWindow">Закрыть</button>
+          <button type="button" class="btn btnWindow" id="settingSaveBtn">Сохранить изменение</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Модальное окно, окно редактирование задачи срабатывает если кликнуть на задачу-->
+  <div class="redactor modal animate__animated animate__fadeInDown" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Редактировать</h5>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="change-input" title="Редактировать">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btnWindow" data-bs-dismiss="modal" id="changeCloseBtn">Закрыть</button>
+          <button type="button" class="btn btnWindow" id="changeSaveBtn">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно, окно ошыпки срабатывает если в меню добавление задачи нет букв хотя бы 1 -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="error alert alert-warning alert-dismissible fade show animate__animated animate__fadeInDown"
+      role="alert">
+      Напиши, пожалуйста, <strong>что-нибудь</strong>
+      <button type="button" class="btn-close"></button>
+    </div>
+
+  <!-- Модальное окно, срабатывает при клике на кнопку плюс окно добавление задачи -->
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Напиши любую задачу</h5>
+        </div>
+        <div class="modal-body">
+          <input maxlength="55" type="text" id="inputAdd" title="Напиши, пожалуйста, что-нибудь здесь">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btnWindow" id="closeAddWindow" data-bs-dismiss="modal"
+            aria-label="Закрыть">Закрыть</button>
+          <button type="button" class="btn btnWindow" id="addTaskBtn">Добавить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="todo__container">
+    <div class="todo">
+      <div class="header">
+        <div class="container">
+          <h1 class="header__title">ToDo</h1>
+          <div class="header__opttion">
+            <button title="Настройт ToDo" type="button" class="header__btn" id="settingBtn"><img src="img/setting.png"
+                alt="Setting-icon"></button>
+            <button title="Добвить Задачу" type="button" id="addBtn" class="header__btn" data-bs-toggle="modal"
+              data-bs-target="#exampleModal"><img src="img/add-icon.png" alt="add-icon"></button>
+            <button title="Удалить все задачи" id="deleteAll" type="button" class="header__btn"><img
+                src="img/remove-icon.png" alt="remove-icon"></button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <ul class="tasks">
+        </ul>
+      </div>
+    </div>
+    <img src="img/pencil.png" alt="pencil">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="app.js"></script>
 </body>
+
 </html>
