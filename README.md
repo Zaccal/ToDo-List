@@ -26,3 +26,4 @@
 - HTML5
 - Normalize
 - Animate.css 
+- Style code OOP
