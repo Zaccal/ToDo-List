@@ -204,11 +204,15 @@ ul, ol{
 }
 
 #sizeFont{
-    max-width: 70px;
+    margin-bottom: 14px;
 }
 
 .error-setting{
     display: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .modal-flex {
@@ -231,6 +235,23 @@ ul, ol{
     .modal-flex{
         flex-direction: column  ;
     }
+
+    .header__title {
+        font-size: 23px;
+        padding: 6px 0;
+    }
+
+    .header__btn{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .header__title {
+        font-size: 17px;
+        padding: 10px 0;
+    }
 }
 
 .modal-sure {
@@ -245,3 +266,5 @@ ul, ol{
     overflow-y: auto;
     outline: 0;
 }
+
+#selectFont { cursor: pointer; }

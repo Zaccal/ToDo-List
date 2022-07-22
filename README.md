@@ -1,6 +1,4 @@
-![alt tag](https://i.yapx.cc/SqeFO.png)
-
-# ToDo-List v0.3 
+# ToDo-List v0.4 
 
 ###### What is new ?
 
@@ -26,3 +24,6 @@
 - HTML5
 - Normalize
 - Animate.css 
+- Style code OOP
+
+[![Screenshot-2022-07-03-at-00-26-48-To-Do-V3-0.png](https://i.postimg.cc/fRjxF7hs/Screenshot-2022-07-03-at-00-26-48-To-Do-V3-0.png)](https://postimg.cc/5XyYQC0K)
