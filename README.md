@@ -1,5 +1,3 @@
-[![Screenshot-2022-07-03-at-00-26-48-To-Do-V3-0.png](https://i.postimg.cc/fRjxF7hs/Screenshot-2022-07-03-at-00-26-48-To-Do-V3-0.png)](https://postimg.cc/5XyYQC0K)
-
 # ToDo-List v0.4 
 
 ###### What is new ?
@@ -27,3 +25,5 @@
 - Normalize
 - Animate.css 
 - Style code OOP
+
+[![Screenshot-2022-07-03-at-00-26-48-To-Do-V3-0.png](https://i.postimg.cc/fRjxF7hs/Screenshot-2022-07-03-at-00-26-48-To-Do-V3-0.png)](https://postimg.cc/5XyYQC0K)
